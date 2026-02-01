@@ -273,7 +273,7 @@ module.exports = function (app) {
 
     if ( configuration.noPositionAlarmTime != 0 ) {
       positionInterval = setInterval(() => {
-        app.debug('checking last position...')
+        app.debug('ing last position...')
         if ( !lastPositionTime || Date.now() - lastPositionTime > configuration.noPositionAlarmTime * 1000 ) {
           positionAlarmSent = true
           sendAnchorAlarm(configuration.state, app, plugin, 'No position received')
@@ -1178,7 +1178,7 @@ module.exports = function (app) {
     anchor_position,
     rodeLength
   ) {
-    app.debug("in checkPosition: " + position.latitude + ',' + anchor_position.latitude)
+    app.debug("in checkPosition: (" + position.latitude + "," + position.longitude + "), Anchor at: (" + anchor_position.latitude + "," + anchor_position.longitude + ")")
 
     if (
       !position?.latitude || !position?.longitude ||
