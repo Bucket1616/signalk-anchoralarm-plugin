@@ -273,7 +273,7 @@ module.exports = function (app) {
 
     if ( configuration.noPositionAlarmTime != 0 ) {
       positionInterval = setInterval(() => {
-        app.debug('ing last position...')
+        app.debug('checking last position...')
         if ( !lastPositionTime || Date.now() - lastPositionTime > configuration.noPositionAlarmTime * 1000 ) {
           positionAlarmSent = true
           sendAnchorAlarm(configuration.state, app, plugin, 'No position received')
