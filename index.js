@@ -1193,8 +1193,6 @@ module.exports = function (app) {
       anchor_position.longitude
     )
 
-    app.debug('distance: ' + meters + ', radius: ' + radius)
-
     let delta = getAnchorDelta(
       app,
       position,
@@ -1221,6 +1219,8 @@ module.exports = function (app) {
       ) {
         alarmState = 'warn'
       }
+
+      app.debug('distance: ' + meters + ', radius: ' + radius)
 
       if (alarmState) {
         if (!configuration.delay) {
